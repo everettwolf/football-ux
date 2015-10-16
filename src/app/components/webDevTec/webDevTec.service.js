@@ -1,24 +1,13 @@
-module footballUx {
+(function () {
   'use strict';
 
-  export interface ITecThing {
-    rank: number;
-    title: string;
-    url: string;
-    description: string;
-    logo: string;
-  }
+  angular
+    .module('footballUx')
+    .service('webDevTec', webDevTec);
 
-  export class WebDevTecService {
-    public data: ITecThing[];
-
-    public get tec(): ITecThing[] {
-      return this.data;
-    }
-
-    /** @ngInject */
-    constructor () {
-      var rawData = [
+  /** @ngInject */
+  function webDevTec() {
+    var data = [
       {
         'title': 'AngularJS',
         'url': 'https://angularjs.org/',
@@ -68,24 +57,18 @@ module footballUx {
         'logo': 'ui-bootstrap.png'
       },
       {
-        'title': 'Stylus',
-        'url': 'http://learnboost.github.io/stylus/',
-        'description': 'Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style.',
-        'logo': 'stylus.png'
-      },
-      {
-        'title': 'TypeScript',
-        'url': 'http://www.typescriptlang.org/',
-        'description': 'TypeScript, a typed superset of JavaScript that compiles to plain JavaScript.',
-        'logo': 'typescript.png'
+        'title': 'Less',
+        'url': 'http://lesscss.org/',
+        'description': 'Less extends the CSS language, adding features that allow variables, mixins, functions and many other techniques.',
+        'logo': 'less.png'
       }
     ];
 
-      this.data = rawData.map((awesomeThing: ITecThing) => {
-        awesomeThing.rank = Math.random();
-        return awesomeThing;
-      });
+    this.getTec = getTec;
+
+    function getTec() {
+      return data;
     }
   }
 
-}
+})();

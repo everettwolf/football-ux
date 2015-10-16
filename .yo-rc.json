@@ -1,8 +1,8 @@
 {
   "generator-gulp-angular": {
-    "version": "0.12.1",
+    "version": "1.0.0",
     "props": {
-      "angularVersion": "~1.4.0",
+      "angularVersion": "~1.4.2",
       "angularModules": [
         {
           "key": "animate",
@@ -19,10 +19,14 @@
         {
           "key": "sanitize",
           "module": "ngSanitize"
+        },
+        {
+          "key": "messages",
+          "module": "ngMessages"
         }
       ],
       "jQuery": {
-        "key": "none"
+        "key": "jquery1"
       },
       "resource": {
         "key": "angular-resource",
@@ -41,16 +45,16 @@
         "module": "ui.bootstrap"
       },
       "cssPreprocessor": {
-        "key": "stylus",
-        "extension": "styl"
+        "key": "less",
+        "extension": "less"
       },
       "jsPreprocessor": {
-        "key": "typescript",
-        "extension": "ts",
-        "srcExtension": "ts"
+        "key": "noJsPrepro",
+        "extension": "js",
+        "srcExtension": "js"
       },
       "htmlPreprocessor": {
-        "key": "none",
+        "key": "noHtmlPrepro",
         "extension": "html"
       },
       "foundationComponents": {
